@@ -1,0 +1,19 @@
+{
+	"name": "loxt-docs",
+	"version": "1.0.0",
+	"private": true,
+	"scripts": {
+		"dev": "astro dev",
+		"start": "astro dev",
+		"build": "astro build",
+		"preview": "astro preview"
+	},
+	"devDependencies": {
+		"@astrojs/tailwind": "^0.2.5",
+		"astro": "^1.0.0-rc.3",
+		"tailwindcss": "^3.1.7"
+	},
+	"dependencies": {
+		"highlight.js": "^11.6.0"
+	}
+}

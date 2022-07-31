@@ -1,0 +1,68 @@
+---
+import Header from "../../components/Header.astro";
+import Layout from "../../layout/layout.astro";
+---
+
+<Layout title="Reporter - Docs">
+	<Header title="Reporter" description="Create your own themes to log the messages" />
+	<main class="mt-5 px-52 gap-5 grid justify-center">
+		<p>Reporters are basically an object, which has to be an instance of a superclass of the Reporter class, we will
+			cover the different ways to create a reporter and how to use it in our logger.</p>
+
+		<pre class="bg-zinc-900 px-10 rounded-3xl">
+			<code>
+<span class="hljs-keyword">import</span> {`{`} <span class="hljs-title class_">Reporter</span> {`}`} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;loxt&#x27;</span>
+
+<span class="hljs-keyword">const</span> myReporter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Reporter</span>({`{`}
+	<span class="hljs-attr">info</span>: <span class="hljs-string">&#x27;info: $message&#x27;</span>,
+	<span class="hljs-attr">warn</span>: <span class="hljs-string">&#x27;warn: $message&#x27;</span>,
+	<span class="hljs-attr">ready</span>: <span class="hljs-string">&#x27;ready $message&#x27;</span>,
+	<span class="hljs-attr">start</span>: <span class="hljs-string">&#x27;start $message&#x27;</span>,
+	<span class="hljs-attr">success</span>: <span class="hljs-string">&#x27;sucess: $message&#x27;</span>,
+	<span class="hljs-comment">// This is error default </span>
+	<span class="hljs-attr">error</span>: {`{`}
+		<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;$name&#x27;</span>,
+		<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;$message&#x27;</span>
+	{`}`}
+{`}`});
+			</code>
+		</pre>
+		<p>But maybe you must add some extra logic to the reporter, for that you can make a new class that extends the
+			reporter class and add the right getters. We call this class an Extension, as it extends our basic theme reporter
+			and adds new functionality.</p>
+		<pre class="bg-zinc-900 mb-6 px-10 rounded-3xl">
+			<code>
+<span class="hljs-keyword">import</span> {`{`} <span class="hljs-title class_">Reporter</span> {`}`} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;loxt&#x27;</span>;
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">class</span> <span class="hljs-title class_">MyTheme</span> <span class="hljs-keyword">extends</span> <span class="hljs-title class_ inherited__">Reporter</span> {`{`}
+	<span class="hljs-keyword">get</span> <span class="hljs-title function_">info</span>() {`{`}
+		<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;info: $message&#x27;</span>;
+	{`}`}
+				
+	<span class="hljs-keyword">get</span> <span class="hljs-title function_">warn</span>() {`{`}
+		<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;warn: $message&#x27;</span>;
+	{`}`}
+				
+	<span class="hljs-keyword">get</span> <span class="hljs-title function_">ready</span>() {`{`}
+		<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;ready $message&#x27;</span>;
+	{`}`}
+				
+	<span class="hljs-keyword">get</span> <span class="hljs-title function_">start</span>() {`{`}
+		<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;start $message&#x27;</span>;
+	{`}`}
+				
+	<span class="hljs-keyword">get</span> <span class="hljs-title function_">success</span>() {`{`}
+		<span class="hljs-keyword">return</span> <span class="hljs-string">&#x27;success: $message&#x27;</span>;
+	{`}`}
+				
+	<span class="hljs-keyword">get</span> <span class="hljs-title function_">error</span>() {`{`}
+		<span class="hljs-keyword">return</span> {`{`}
+			<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;$name&#x27;</span>
+			<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;$message&#x27;</span>
+		{`}`};
+	{`}`}
+{`}`}
+			</code>
+		</pre>
+	</main>
+</Layout>

@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+		"target": "ESNext",
+		"module": "ESNext",
+		"moduleResolution": "node",
+		"resolveJsonModule": true,
+		"isolatedModules": true,
+		"types": ["astro/client"]
+	},
+	"include": [],
+	"exclude": ["node_modules"]
+}
