@@ -1,14 +1,6 @@
 ---
 import Header from "../components/Header.astro";
 import Layout from "../layout/layout.astro";
-import highlight from "highlight.js";
-
-console.log(highlight.highlight("javascript", `
-import { Colors } from 'loxt';
-
-const { underline, bold, red } = Colors
-console.log(underline(bold(red('This is a text!'))))
-`).value)
 ---
 
 <Layout title="Introduction">

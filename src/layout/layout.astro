@@ -1,6 +1,7 @@
 ---
 import Navbar from "../components/Navbar.astro";
 import 'highlight.js/styles/github-dark.css';
+import favicon from '/favicon.png';
 
 interface Props { title: string }
 
@@ -13,7 +14,7 @@ const { title } = Astro.props as Props
 		<title>{title} - Loxt</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="shortcut icon" href="/favicon.png" type="image/png">
+		<link rel="shortcut icon" href={favicon} type="image/png">
 	</head>
 
 	<body class="text-white">
