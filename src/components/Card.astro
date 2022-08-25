@@ -7,7 +7,7 @@ interface Props {
 const { title, description } = Astro.props as Props;
 ---
 
-<a href={`/loxt-docs/docs/${title.toLowerCase()}`}>
+<a href={`/docs/${title.toLowerCase()}`}>
 	<div style="min-height: 180px"
 		class="px-6 py-4 bg-blue-700 hover:bg-blue-800 transition-all max-w-sm rounded-xl overflow-hidden shadow-lg">
 		<h3 class="font-bold text-xl mb-2">{title} →</h3>
