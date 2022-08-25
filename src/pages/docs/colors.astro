@@ -1,6 +1,6 @@
 ---
 import Header from "../../components/Header.astro";
-import Layout from "../../layout/layout.astro";
+import Layout from "../../layout/Layout.astro";
 import { Code } from "astro/components";
 ---
 
@@ -13,22 +13,15 @@ import { Code } from "astro/components";
 	<main class="mt-5 gap-5 grid justify-center">
 		<p>
 			The colors module has terminal colors, bold, dim, underlined, inverted,
-			hidden and more.
+			hidden and more. Since the methods return strings you can chain them.
 		</p>
-		<p>Since the methods return strings you can chain them.</p>
 		<Code
+			wrap
 			code={`
-import Loxt from 'loxt';
+	import { Colors } from 'loxt';
 
-const loxt = new Loxt();
-
-loxt.start('Some code...');
-loxt.ready('Initialization code, whatever...');
-loxt.info('Loxt is easy to use!');     
-loxt.warn('You can use colors!');      
-loxt.error('Create your own themes!'); 
-loxt.success('You can use themes from other people too!');
-loxt.start('My Amazing App!');
+	const { underline, bold, red } = Colors
+	console.log(underline(bold(red('This is a text!'))))
 		`}
 			lang="ts"
 			theme="one-dark-pro"

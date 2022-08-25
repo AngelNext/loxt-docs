@@ -1,26 +1,36 @@
 ---
 import Header from "../../components/Header.astro";
-import Layout from "../../layout/layout.astro";
+import Layout from "../../layout/Layout.astro";
+import { Code } from "astro/components";
 ---
 
 <Layout title="Logger - Docs">
-	<Header title="Logger" description="Loxt's main function is to help you log messages with style" />
+	<Header
+		title="Logger"
+		description="Loxt's main function is to help you log messages with style"
+	/>
 	<main class="mt-5 gap-5 grid justify-center">
-		<p>To start using it create a instance of the Loxt class, and then call its various methods.</p>
-		<pre class="bg-zinc-900 px-10 rounded-3xl">
-			<code>
-<span class="hljs-keyword">import</span> { <span class="hljs-title class_">Loxt</span> } <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;loxt&#x27;</span>;
+		<p>
+			To start using it create a instance of the Loxt class, and then call its
+			various methods.
+		</p>
+		<Code
+			wrap
+			lang="ts"
+			theme="one-dark-pro"
+			code={`
+	import Loxt from 'loxt';
 
-<span class="hljs-keyword">const</span> loxt = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Loxt</span>();
+	const loxt = new Loxt();
 
-loxt.<span class="hljs-title function_">start</span>(<span class="hljs-string">&#x27;Some code...&#x27;</span>);
-loxt.<span class="hljs-title function_">ready</span>(<span class="hljs-string">&#x27;Initialization code, whatever...&#x27;</span>);
-loxt.<span class="hljs-title function_">info</span>(<span class="hljs-string">&#x27;Loxt is easy to use!&#x27;</span>);     
-loxt.<span class="hljs-title function_">warn</span>(<span class="hljs-string">&#x27;You can use colors!&#x27;</span>);      
-loxt.<span class="hljs-title function_">error</span>(<span class="hljs-string">&#x27;Create your own themes!&#x27;</span>); 
-loxt.<span class="hljs-title function_">success</span>(<span class="hljs-string">&#x27;You can use themes from other people too!&#x27;</span>);
-loxt.<span class="hljs-title function_">start</span>(<span class="hljs-string">&#x27;My Amazing App!&#x27;</span>);
-			</code>
-		</pre>
+	loxt.start('Some code...');
+	loxt.ready('Initialization code, whatever...');
+	loxt.info('Loxt is easy to use!');     
+	loxt.warn('You can use colors!');      
+	loxt.error('Create your own themes!'); 
+	loxt.success('You can use themes from other people too!');
+	loxt.start('My Amazing App!');
+			`}
+		/>
 	</main>
 </Layout>

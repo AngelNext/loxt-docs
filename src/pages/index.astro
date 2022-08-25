@@ -1,17 +1,36 @@
 ---
 import Header from "../components/Header.astro";
-import Layout from "../layout/layout.astro";
+import Layout from "../layout/Layout.astro";
 ---
 
 <Layout title="Introduction">
-	<Header title="Loxt" description="Loxt is a simple and lightweight console logger with 0 external dependencies.">
-		<div class="inline-flex items-center px-5 py-2 gap-2 justify-center rounded-lg bg-slate-900 bg-opacity-50">
+	<Header
+		title="Loxt"
+		description="Loxt is a simple and lightweight console logger with 0 external dependencies."
+	>
+		<div
+			class="inline-flex items-center px-5 py-2 gap-2 justify-center rounded-lg bg-slate-900 bg-opacity-50"
+		>
 			<pre>npm install loxt</pre>
-			<button onclick="navigator.clipboard.writeText('npm install loxt').then(() => alert('Copied successfully!'))">
-				<svg preserveAspectRatio="xMidYMid meet" viewBox="0 0 24 24" width="1.2em" height="1.2em"
-					class="inline-block fill-current text-gray-200 cursor-pointer hover:text-white mb-1" aria-hidden="true">
-					<path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
-						d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1M8 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M8 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m0 0h2a2 2 0 0 1 2 2v3m2 4H10m0 0l3-3m-3 3l3 3">
+			<button
+				onclick="navigator.clipboard.writeText('npm install loxt').then(() => alert('Copied successfully!'))"
+			>
+				<svg
+					preserveAspectRatio="xMidYMid meet"
+					viewBox="0 0 24 24"
+					width="1.2em"
+					height="1.2em"
+					class="inline-block fill-current text-gray-200 cursor-pointer hover:text-white mb-1"
+					aria-hidden="true"
+				>
+					<path
+						fill="none"
+						stroke="currentColor"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						stroke-width="2"
+						d="M8 5H6a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2v-1M8 5a2 2 0 0 0 2 2h2a2 2 0 0 0 2-2M8 5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2m0 0h2a2 2 0 0 1 2 2v3m2 4H10m0 0l3-3m-3 3l3 3"
+					>
 					</path>
 				</svg>
 			</button>
@@ -19,8 +38,11 @@ import Layout from "../layout/layout.astro";
 	</Header>
 	<main class="mt-5 gap-5 grid justify-center">
 		<div class="border-4 border-blue-700 rounded-md"></div>
-		<p>Efficient Logging, loxt works for Node.js, Browser, Deno, and in the future <a class="text-blue-600"
-				href="https://bun.sh" target="_blank">bun</a></p>
+		<p>
+			Efficient Logging, loxt works for Node.js, Browser, Deno, and in the
+			future <a class="text-blue-600" href="https://bun.sh" target="_blank"
+				>bun</a>
+		</p>
 	</main>
 
 	<style>
@@ -30,7 +52,7 @@ import Layout from "../layout/layout.astro";
 			background-size: cover;
 			background-position: center;
 			background-repeat: no-repeat;
-			background-image: url('/example01.png');
+			background-image: url("/example01.png");
 		}
 	</style>
 </Layout>
