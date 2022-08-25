@@ -1,26 +1,37 @@
 ---
 import Header from "../../components/Header.astro";
 import Layout from "../../layout/layout.astro";
+import { Code } from "astro/components";
 ---
 
 <Layout title="Colors - Docs">
-	<Header title="Colors"
-		description="Loxt doesn't just make it easier to add your own custom themes, it even makes easier the use of colors in the terminal, all in one module!" />
+	<Header
+		title="Colors"
+		description="Loxt doesn't just make it easier to add your own custom themes, it even makes easier the use of colors in the terminal, all in one module!"
+	/>
 
 	<main class="mt-5 gap-5 grid justify-center">
 		<p>
-			The colors module has terminal colors, bold, dim, underlined, inverted, hidden and more.
+			The colors module has terminal colors, bold, dim, underlined, inverted,
+			hidden and more.
 		</p>
-		<p>
-			Since the methods return strings you can chain them.
-		</p>
-		<pre class="bg-zinc-900 px-10 rounded-3xl">
-			<code>
-<span class="hljs-keyword">import</span> {`{`} <span class="hljs-title class_">Colors</span> {`}`} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;loxt&#x27;</span>;
+		<p>Since the methods return strings you can chain them.</p>
+		<Code
+			code={`
+import Loxt from 'loxt';
 
-<span class="hljs-keyword">const</span> {`{`} underline, bold, red {`}`} = <span class="hljs-title class_">Colors</span>
-<span class="hljs-variable language_">console</span>.<span class="hljs-title function_">log</span>(<span class="hljs-title function_">underline</span>(<span class="hljs-title function_">bold</span>(<span class="hljs-title function_">red</span>(<span class="hljs-string">&#x27;This is a text!&#x27;</span>))))
-			</code>
-		</pre>
+const loxt = new Loxt();
+
+loxt.start('Some code...');
+loxt.ready('Initialization code, whatever...');
+loxt.info('Loxt is easy to use!');     
+loxt.warn('You can use colors!');      
+loxt.error('Create your own themes!'); 
+loxt.success('You can use themes from other people too!');
+loxt.start('My Amazing App!');
+		`}
+			lang="ts"
+			theme="one-dark-pro"
+		/>
 	</main>
 </Layout>

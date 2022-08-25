@@ -11,7 +11,7 @@ import Layout from "../../layout/layout.astro";
 
 		<pre class="bg-zinc-900 px-10 rounded-3xl">
 			<code>
-<span class="hljs-keyword">import</span> {`{`} <span class="hljs-title class_">Reporter</span> {`}`} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;loxt&#x27;</span>
+<span class="hljs-keyword">import</span> {`{`} <span class="hljs-title class_">Reporter</span> {`}`} <span class="hljs-keyword">from</span> <span class="hljs-string">&#x27;loxt&#x27;</span>;
 
 <span class="hljs-keyword">const</span> myReporter = <span class="hljs-keyword">new</span> <span class="hljs-title class_">Reporter</span>({`{`}
 	<span class="hljs-attr">info</span>: <span class="hljs-string">&#x27;info: $message&#x27;</span>,
@@ -22,7 +22,7 @@ import Layout from "../../layout/layout.astro";
 	<span class="hljs-comment">// This is error default </span>
 	<span class="hljs-attr">error</span>: {`{`}
 		<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;$name&#x27;</span>,
-		<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;$message&#x27;</span>
+		<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;$message&#x27;</span>,
 	{`}`}
 {`}`});
 			</code>
@@ -57,9 +57,9 @@ import Layout from "../../layout/layout.astro";
 				
 	<span class="hljs-keyword">get</span> <span class="hljs-title function_">error</span>() {`{`}
 		<span class="hljs-keyword">return</span> {`{`}
-			<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;$name&#x27;</span>
-			<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;$message&#x27;</span>
-		{`}`};
+			<span class="hljs-attr">name</span>: <span class="hljs-string">&#x27;$name&#x27;</span>,
+			<span class="hljs-attr">message</span>: <span class="hljs-string">&#x27;$message&#x27;</span>,
+		{`}`}
 	{`}`}
 {`}`}
 			</code>
